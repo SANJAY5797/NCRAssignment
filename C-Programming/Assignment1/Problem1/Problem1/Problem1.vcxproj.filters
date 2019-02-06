@@ -32,16 +32,10 @@
     <ClCompile Include="Problem1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Desktop\CDAC\C-Programming\Assignment\Assignment\add.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Desktop\CDAC\C-Programming\Assignment\Assignment\div.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\Desktop\CDAC\C-Programming\Assignment\Assignment\mul.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Desktop\CDAC\C-Programming\Assignment\Assignment\sub.cpp">
+    <ClCompile Include="add.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
