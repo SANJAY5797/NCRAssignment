@@ -83,6 +83,10 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Desktop\CDAC\C-Programming\Assignment\Assignment\add.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\CDAC\C-Programming\Assignment\Assignment\div.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\CDAC\C-Programming\Assignment\Assignment\mul.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\CDAC\C-Programming\Assignment\Assignment\sub.cpp" />
     <ClCompile Include="Problem1.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
