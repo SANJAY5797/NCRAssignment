@@ -2,46 +2,41 @@
 #include "stdafx.h"
 #include<stdlib.h>
 
+void swap(int *a, int *b)
+{
+	int temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
 void problem2()
 {
-	int n, i, j, temp, neg_numbers = 0;
-	printf("Enter size of array\n");
+	int n, a[20], i, j, given_sum, calci_sum = 0, flag = 0;
+	printf("enter the number of elements");
 	scanf_s("%d", &n);
-	int *arr = (int*)malloc(sizeof(int)*n);
-	printf("Enter elements of array : \n");
-	for (i = 0; i < n; i++)
+	printf("enter the elements");
+	for (i = 0; i<n; i++)
 	{
-		scanf_s("%d", &arr[i]);
+		scanf_s("%d", &a[i]);
 	}
-	for (i = 0; i < n; i++)
+	i = 0; j = n - 1;
+	while (i != j)
 	{
-		if (arr[i] < 0)
-			neg_numbers++;
-	}
-	i = 0;
-	j = 0;
-	while (i < neg_numbers)
-	{
-		if (arr[i] > 0)
+		if (a[i]>0)
 		{
-			j = 0;
-			while (arr[j] > 0)
-			{
-				j++;
-			}
-			temp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = temp;
+			swap(&a[i], &a[j]);
+			j--;
 		}
 		else
 		{
 			i++;
 		}
 	}
-	for (i = 0; i < n; i++)
+	for (i = 0; i<n; i++)
 	{
-		printf("%d\n", arr[i]);
+		printf("%d ", a[i]);
 	}
-	free(arr);
+	printf("\n");
 	getchar();
 }
