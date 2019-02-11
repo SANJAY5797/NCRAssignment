@@ -25,6 +25,18 @@
     <Text Include="Text2_ans.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="Text3.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="Text3_ans.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="Text4.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="Text4_ans.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -45,6 +57,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Program2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Program3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Program4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

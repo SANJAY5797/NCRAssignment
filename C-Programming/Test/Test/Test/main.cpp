@@ -23,7 +23,7 @@ int main()
 			case 2:
 				program2();
 				break;
-			/*case 3:
+			case 3:
 				program3();
 				break;
 			case 4:
@@ -31,7 +31,7 @@ int main()
 				break;
 			default:
 				printf("Wrong option");
-				break;*/
+				break;
 		}
 	}
 	getchar();
