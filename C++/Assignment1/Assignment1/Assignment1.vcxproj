@@ -83,8 +83,9 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Assignment1.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Example.cpp" />
+    <ClCompile Include="Problem9.cpp" />
     <ClCompile Include="Program5.cpp" />
     <ClCompile Include="Program3.cpp" />
     <ClCompile Include="Program1.cpp" />
