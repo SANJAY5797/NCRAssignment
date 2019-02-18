@@ -1,17 +1,20 @@
-﻿Build started 12-02-2019 10.31.53 PM.
+﻿Build started 17-02-2019 5.54.27 PM.
      1>Project "C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment5\Assignment5\Assignment5\Assignment5.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Assignment5.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Problem8.cpp
-         Problem8.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Assignment5.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Problem1.cpp main.cpp
+         Problem1.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment5\assignment5\assignment5\problem1.cpp(14): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         main.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment5\Assignment5\Debug\Assignment5.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment5\Assignment5\Debug\Assignment5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment5\Assignment5\Debug\Assignment5.lib" /MACHINE:X86 Debug\main.obj
          Debug\Problem1.obj
          Debug\Problem2.obj
          Debug\Problem3.obj
          Debug\Problem4.obj
-         Debug\Problem5.obj
          Debug\Problem6.obj
-         Debug\Problem7.obj
          Debug\Problem8.obj
          Debug\stdafx.obj
          Assignment5.vcxproj -> C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment5\Assignment5\Debug\Assignment5.exe
@@ -19,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.24
+Time Elapsed 00:00:00.63

@@ -2,7 +2,7 @@
 //
 #include "stdafx.h"
 #include "assert.h"
-#include<cmath>
+#include<math.h>
 #include<iostream>
 using namespace std;
 #include "Example.cpp"
@@ -34,7 +34,34 @@ Complex mul_complex(Complex &c4, Complex &c5)
 	return c6;
 }
 
+double find_distance(Point p1,Point p2)
+{
+	double ans = sqrt((p1.x - p2.x)*(p1.x - p2.x) + (p1.y - p2.y)*(p1.y - p2.y));
+	return ans;
+}
 
+Distance1 add_cm(Distance1 a, Distance2 b)
+{
+	long int tmp = a.m * 100 + a.cm;
+	long int tmp2 = b.ft * 12 + b.in;
+	float ans = tmp2 / 2.54;
+	Distance1 temp;
+	temp.m = (int)ans / 100;
+	temp.cm = ((int)ans) % 100;
+	cout << "\nDistance sum in meters = " << temp.m << " and centimeter = " << temp.cm;
+	return temp;
+}
+Distance2 add_inch(Distance1 a, Distance2 b)
+{
+	long int tmp = a.m * 100 + a.cm;
+	long int tmp2 = b.ft * 12 + b.in;
+	float ans = tmp2*2.54;
+	Distance2 temp;
+	temp.ft = (int)ans / 12;
+	temp.in = ((int)ans) % 12;
+	cout << "\nDistance sum in feet = " << temp.ft << " and inches = " << temp.in;
+	return temp;
+}
 
 int main()
 {
@@ -91,32 +118,34 @@ int main()
 			cout << division(90, 10)<<endl;
 			break;
 		}
-		/*case 5:
+		case 5:
 		{
 			Distance1 d1;
 			Distance2 d2;
 			d1.get_val();
 			d2.get_val();
-			cout << "Select required conversion :\n1.Inches to centimeters\n2.Centimeters to inches\n";
+			cout << "\nSelect required conversion :\n1.Inches to centimeters\n2.Centimeters to inches\n";
 			int option;
 			cin >> option;
 			if (option == 1)
-				convert_to_centimeters();
+				add_cm(d1,d2);
 			else
-				convert_to_inches();
+				add_inch(d1,d2);
+			break;
 				
-		}*/
+		}
 		case 6:
 		{
 			Point p1(4, 5), p2(7, 9);
-			//int c = distance(p1, p2);
-			//cout << "Distance between p1 and p2 is " << c;
+			double c = find_distance(p1, p2);
+			cout << "Distance between p1 and p2 is " << c;
 			break;
 		}
 		case 8:
 		{
 			Employee e1(2, 3), e2(e1);
 			cout << "\nSizeof(e1) which call by value = " << sizeof(e1)<<"\nSizeof(e2) which call by reference = "<<sizeof(e2);
+			break;
 		}
 		case 9:
 		{

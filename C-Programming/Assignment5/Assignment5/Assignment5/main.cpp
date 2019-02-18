@@ -40,13 +40,13 @@ int main()
 			problem4();
 			break;
 		case 5:
-			problem5();
+			//problem5();
 			break;
 		case 6:
 			problem6();
 			break;
 		case 7:
-			problem7();
+			//problem7();
 			break;
 		case 8:
 			problem8();
