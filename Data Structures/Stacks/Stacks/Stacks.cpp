@@ -77,8 +77,9 @@ my_stack :: ~my_stack()
 }
 
 bool is_matched(char*);
-void in_to_post(char* str);
-void in_to_pre(char *str);
+char* in_to_post(char* str);
+char* in_to_pre(char *str);
+int postfix_evaluation(char *);
 
 int main()
 {
@@ -87,9 +88,9 @@ int main()
 	while (1)
 	{
 		cout << "\n1.Stack implementation\n2.Symbol Matching\n3.Infix to Postfix\n4.Infix to Prefix\n\
-5.Program5\n6.Program6\n7.Exit\n";
+5.Postfix evaluation\n6.Exit\n";
 		cin >> option;
-		if (option == 7)
+		if (option == 6)
 			break;
 		switch (option)
 		{
@@ -117,11 +118,15 @@ int main()
 		}
 		case 3:
 		{
-			in_to_post("((a+b)*e-(f/g))");
+			cout<< in_to_post("((a+b)*e-(f/g))");
 		}
 		case 4:
 		{
-			in_to_pre("((a+b)*e-(f/g))");
+			cout<< in_to_pre("((a+b)*e-(f/g))");
+		}
+		case 5:
+		{
+			cout << postfix_evaluation("12@31@4@*+8@-");
 		}
 		}
 	}

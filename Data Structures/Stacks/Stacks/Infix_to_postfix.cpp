@@ -3,7 +3,6 @@
 #include<string.h>
 #include "My_stack.cpp"
 using namespace std;
-
 int precedence(char ch)
 {
 	switch (ch)
@@ -21,15 +20,19 @@ int precedence(char ch)
 	}
 }
 
-void in_to_post(char* str)
+char* in_to_post(char* str)
 {
+	char *output = new char[strlen(str) + 1];
 	my_stack mstack;
 	mstack.getSize(strlen(str));
-	int i;
+	int i, j = 0;
 	for (i = 0; i < strlen(str); i++)
 	{
-		if ((str[i] >= 'a' && str[i] <='z') || (str[i] >= 'A' && str[i] <= 'Z'))
-			cout << str[i];
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+		{
+			output[j] = str[i];
+			j++;
+		}
 		else
 		{
 			if (str[i] == '(' )
@@ -40,7 +43,8 @@ void in_to_post(char* str)
 				{
 					while (mstack.peek() != '(')
 					{
-						cout <<(char)mstack.pop();	
+						output[j] = (char)mstack.pop();
+						j++;
 					}
 					mstack.pop();
 				}
@@ -51,7 +55,10 @@ void in_to_post(char* str)
 					else
 					{
 						while (precedence(str[i]) <= precedence(mstack.peek()))
-							cout << (char)mstack.pop();
+						{
+							output[j] = (char)mstack.pop();
+							j++;
+						}
 						mstack.push(str[i]);
 					}
 				}
@@ -59,5 +66,10 @@ void in_to_post(char* str)
 		}
 	}
 	while (!(mstack.isEmpty()))
-		cout <<(char)mstack.pop();
+	{
+		output[j] = (char)mstack.pop();
+		j++;
+	}
+	output[j] = '\0';
+	return output;
 }

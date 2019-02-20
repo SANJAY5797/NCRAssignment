@@ -44,5 +44,8 @@
     <ClCompile Include="Infix_to_prefix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="postfix_evaluation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
