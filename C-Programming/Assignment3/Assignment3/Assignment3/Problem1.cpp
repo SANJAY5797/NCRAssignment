@@ -18,6 +18,7 @@ void problem1()
 	i = 0;
 	j = 0;
 	current_sum = arr[0];
+	//
 	while (i <= n && j <= n)
 	{
 		if (current_sum < sum)

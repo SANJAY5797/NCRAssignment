@@ -3,7 +3,7 @@
 
 #include<stdio.h>
 #include "stdafx.h"
-
+#define MAX_LIMIT 1000
 void problem1();
 void problem2();
 void problem3();
@@ -16,7 +16,7 @@ void problem9();
 void problem10();
 void problem11();
 void problem12();
-void problem13();
+void problem13(char *s1, char *s2);
 void problem14();
 void problem15();
 
@@ -35,49 +35,81 @@ int main()
 		switch (option)
 		{
 		case 1:
+		{
 			problem1();
 			break;
+		}
 		case 2:
-			problem2();
+		{	problem2();
 			break;
+		}
 		case 3:
+		{
 			problem3();
 			break;
+		}
 		case 4:
+		{
 			problem4();
 			break;
+		}
 		case 5:
+		{
 			problem5();
 			break;
+		}
 		case 6:
+		{	
 			problem6();
 			break;
+		}
 		case 7:
+		{
 			problem7();
 			break;
+		}
 		case 8:
+		{
 			problem8();
 			break;
+		}
 		case 9:
+		{	
 			problem9();
 			break;
+		}
 		case 10:
+		{
 			problem10();
 			break;
+		}
 		case 11:
+		{	
 			problem11();
 			break;
+		}
 		case 12:
+		{
 			problem12();
 			break;
-		/*case 13:
-			problem13();
+		}
+		case 13:
+		{
+			char *out = NULL;
+			char input[MAX_LIMIT];
+			printf("Input the shorthand string ");
+			getchar();
+			scanf("%[^\n]s", input);
+			problem13(input, out);
+			getchar();
 			break;
-		*/
+		}
 		case 14:
+		{
 			problem14();
 			break;
-		//case 15:
+		}
+			//case 15:
 			//problem15();
 			//break;
 		}

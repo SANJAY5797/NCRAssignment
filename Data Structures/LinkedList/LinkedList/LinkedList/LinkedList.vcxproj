@@ -84,7 +84,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Merge_list.cpp" />
+    <ClCompile Include="polynomial_addition.cpp" />
     <ClCompile Include="SLL.cpp" />
+    <ClCompile Include="stack_using_linked_lists.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
