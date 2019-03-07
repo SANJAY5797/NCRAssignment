@@ -1,0 +1,17 @@
+1) Configure apache server to disable directory listing.
+
+2) Set up tomcat server for handling incoming requests on port 8080.
+
+3) Configure proxy server in Apache server to handle incoming requests by the tomcat server. 
+Any request to http://localhost/ should be handled by the tomcat server and all other requests 
+locally by the apache server.
+
+4) Configure apache server to handle https based requests.
+
+5) Configure apache server to handle only jpeg images but not any other image formats.
+
+6) Create a simple html page for displaying a mini calculator with addition operation.
+
+7) Create a simple html page for student registration with fields such as name, photo, DoB, 
+educational qualifications etc., with appropriate JavaScript based input validations. Display
+age field once Date of Birth is provided. Direct input in to age field should not be allowed.

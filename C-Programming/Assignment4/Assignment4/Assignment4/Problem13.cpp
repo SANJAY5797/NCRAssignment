@@ -21,18 +21,35 @@ bool input_validation(char* input)
 				}
 				else
 				{
+					if (counter == len_input - 1)
+					{
+						printf("Error : Last letter cannot be a hyphen(-)");
+						return false;
+					}
 					if (input[counter + 1] == '-')//Continuos hyphens like ---
 					{
 						printf("Error : Continuous hyphens not allowed");
 						return false;
 					}
-					if (!((input[counter - 1] >= 'a' && input[counter + 1] <= 'z') || (input[counter - 1] >= 'A' && input[counter + 1] < 'Z') ||
-						(input[counter - 1] >= '0'&&input[counter + 1] <= '9')))//Type mismatch of character befor and after hyphen
+					if (input[counter - 1] >= 'a' && input[counter - 1] <= 'z')//Type mismatch of character befor and after hyphen
 					{
-						printf("Error : Mismatch of characters before and after hyphen");
+						if (!(input[counter + 1] >= 'a' && input[counter + 1] <= 'z'))
+							printf("Error : Mismatch of characters before and after hyphen");
 						return false;
 					}
-					if (input[counter + 1] < input[counter - 1])
+					if (input[counter - 1] >= 'A' && input[counter - 1] <= 'Z')//Type mismatch of character befor and after hyphen
+					{
+						if (!(input[counter + 1] >= 'A' && input[counter + 1] <= 'Z'))
+							printf("Error : Mismatch of characters before and after hyphen");
+						return false;
+					}
+					if (input[counter - 1] >= '0' && input[counter - 1] <= '9')//Type mismatch of character befor and after hyphen
+					{
+						if (!(input[counter + 1] >= '0' && input[counter + 1] <= '9'))
+							printf("Error : Mismatch of characters before and after hyphen");
+						return false;
+					}
+					if (input[counter + 1] < input[counter - 1])//If characters before and after hyphen are in wrong order like f-a
 					{
 						printf("Error : Letter's before and after hyphen expected to be in ascending order");
 						return false;

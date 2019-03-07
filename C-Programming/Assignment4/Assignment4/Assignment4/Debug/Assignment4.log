@@ -1,12 +1,78 @@
-﻿Build started 03-03-2019 11.21.32 PM.
-     1>Project "C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment4\Assignment4\Assignment4\Assignment4.vcxproj" on node 2 (Build target(s)).
+﻿Build started 07-03-2019 1.19.50 AM.
+     1>Project "C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment4\Assignment4\Assignment4\Assignment4.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Assignment4.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Problem13.cpp main.cpp
-         main.cpp
-     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\main.cpp(102): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\Assignment4.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Assignment4.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp Problem1.cpp Problem10.cpp Problem11.cpp Problem12.cpp Problem13.cpp Problem14.cpp Problem2.cpp Problem3.cpp Problem4.cpp Problem5.cpp Problem6.cpp Problem7.cpp Problem8.cpp Problem9.cpp Program15.cpp String_input.cpp
+         String_input.cpp
+         Program15.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\program15.cpp(42): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\program15.cpp(59): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\program15.cpp(61): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\program15.cpp(80): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
+         Problem9.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem9.cpp(9): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem9.cpp(10): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem9.cpp(28): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem9.cpp(31): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
+         Problem8.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem8.cpp(32): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem8.cpp(8): warning C4101: 'j' : unreferenced local variable
+         Problem7.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem7.cpp(16): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem7.cpp(17): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem7.cpp(18): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem7.cpp(39): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem7.cpp(33): warning C4101: 'length' : unreferenced local variable
+         Problem6.cpp
+         Problem5.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem5.cpp(12): warning C4996: 'gets': This function or variable may be unsafe. Consider using gets_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(254) : see declaration of 'gets'
+         Problem4.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem4.cpp(9): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem4.cpp(25): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem4.cpp(23): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem4.cpp(23): warning C4101: 'j' : unreferenced local variable
+         Problem3.cpp
+         Problem2.cpp
+         Problem14.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem14.cpp(12): warning C4996: 'gets': This function or variable may be unsafe. Consider using gets_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(254) : see declaration of 'gets'
          Problem13.cpp
-     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem13.cpp(74): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem13.cpp(91): warning C4018: '<' : signed/unsigned mismatch
+         Problem12.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem12.cpp(15): warning C4996: 'gets': This function or variable may be unsafe. Consider using gets_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(254) : see declaration of 'gets'
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem12.cpp(17): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem12.cpp(20): warning C4996: 'gets': This function or variable may be unsafe. Consider using gets_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(254) : see declaration of 'gets'
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem12.cpp(25): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem12.cpp(12): warning C4101: 'ptr' : unreferenced local variable
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem12.cpp(10): warning C4101: 'ch' : unreferenced local variable
+         Problem11.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem11.cpp(9): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem11.cpp(33): warning C4996: 'gets': This function or variable may be unsafe. Consider using gets_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(254) : see declaration of 'gets'
+         Problem10.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem10.cpp(11): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem10.cpp(20): warning C4996: 'gets': This function or variable may be unsafe. Consider using gets_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(254) : see declaration of 'gets'
+         Problem1.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\problem1.cpp(6): warning C4305: 'initializing' : truncation from 'double' to 'float'
+         main.cpp
+     1>c:\users\pratik saxsena\ncrassignment\c-programming\assignment4\assignment4\assignment4\main.cpp(101): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
          Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment4\Assignment4\Debug\Assignment4.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment4\Assignment4\Debug\Assignment4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment4\Assignment4\Debug\Assignment4.lib" /MACHINE:X86 Debug\main.obj
@@ -24,10 +90,12 @@
          Debug\Problem7.obj
          Debug\Problem8.obj
          Debug\Problem9.obj
+         Debug\Program15.obj
          Debug\stdafx.obj
+         Debug\String_input.obj
          Assignment4.vcxproj -> C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment4\Assignment4\Debug\Assignment4.exe
-     1>Done Building Project "C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment4\Assignment4\Assignment4\Assignment4.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\Pratik saxsena\NCRAssignment\C-Programming\Assignment4\Assignment4\Assignment4\Assignment4.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.81
+Time Elapsed 00:00:04.46

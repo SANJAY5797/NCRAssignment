@@ -1,8 +1,7 @@
 // Assignment4.cpp : Defines the entry point for the console application.
 //
-
-#include<stdio.h>
 #include "stdafx.h"
+#include<stdio.h>
 #define MAX_LIMIT 1000
 void problem1();
 void problem2();
@@ -109,10 +108,13 @@ int main()
 			problem14();
 			break;
 		}
-			//case 15:
-			//problem15();
-			//break;
+		case 15:
+		{
+			problem15();
+			break;
 		}
+		}
+
 	}
 	getchar();
 }
