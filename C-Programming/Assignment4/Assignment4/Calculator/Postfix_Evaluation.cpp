@@ -7,6 +7,8 @@ extern long double long_double_isEmpty(struct long_double_StackNode *root);
 extern void long_double_push(struct long_double_StackNode** root, long double data);
 extern long double long_double_pop(struct long_double_StackNode** root);
 extern long double long_double_peek(struct long_double_StackNode* root);
+extern void destroy_my_long_double_stack(struct long_double_StackNode* root);
+
 
 long double postfix_evaluation(char *str)
 {
@@ -44,10 +46,18 @@ long double postfix_evaluation(char *str)
 			}
 			else if (str[i] == '/')
 			{
-				long_double_push(&root,a / b);
+				if (b == 0)
+				{
+					printf("Error cannot divide by 0\n");
+					return -1;
+				}
+				else
+					long_double_push(&root,a / b);
 			}
 		}
 	}
-	return long_double_peek(root);
+	long double result = long_double_peek(root);
+	destroy_my_long_double_stack(root);
+	return result;
 
 }

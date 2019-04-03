@@ -24,5 +24,8 @@ public:
 	}
 	friend Complex add_complex(Complex &c4, Complex &c5);
 	friend Complex mul_complex(Complex &c4, Complex &c5);
+	~Complex()
+	{
+	}
 };
 

@@ -34,20 +34,26 @@ bool input_validation(char* input)
 					if (input[counter - 1] >= 'a' && input[counter - 1] <= 'z')//Type mismatch of character befor and after hyphen
 					{
 						if (!(input[counter + 1] >= 'a' && input[counter + 1] <= 'z'))
+						{
 							printf("Error : Mismatch of characters before and after hyphen");
-						return false;
+							return false;
+						}
 					}
 					if (input[counter - 1] >= 'A' && input[counter - 1] <= 'Z')//Type mismatch of character befor and after hyphen
 					{
 						if (!(input[counter + 1] >= 'A' && input[counter + 1] <= 'Z'))
+						{
 							printf("Error : Mismatch of characters before and after hyphen");
-						return false;
+							return false;
+						}
 					}
 					if (input[counter - 1] >= '0' && input[counter - 1] <= '9')//Type mismatch of character befor and after hyphen
 					{
 						if (!(input[counter + 1] >= '0' && input[counter + 1] <= '9'))
+						{
 							printf("Error : Mismatch of characters before and after hyphen");
-						return false;
+							return false;
+						}
 					}
 					if (input[counter + 1] < input[counter - 1])//If characters before and after hyphen are in wrong order like f-a
 					{
@@ -68,6 +74,7 @@ bool input_validation(char* input)
 
 int cal_output_length(char *input)
 {
+
 	int counter = 0, len_input = 0, len_output = 0;
 	len_input = strlen(input);//length of input string
 	len_output = len_input;
@@ -83,6 +90,7 @@ int cal_output_length(char *input)
 
 void problem13(char *input,char *output)
 {
+	//printf("%s", input);
 	int counter = 0, len_output = 0, no_of_hyphens = 0, index1 = 0, index2 = 0;
 	if (false == input_validation(input))//Input validation invoked
 		return;
@@ -94,10 +102,11 @@ void problem13(char *input,char *output)
 		{
 			char end = input[index1 + 1];
 			char start = input[index1 - 1];
-			while (start < end-1)
+			while (start < end - 1)
 			{
 				output[index2++] = ++start;
 			}
+			
 		}
 		else//Copy other characters as it is
 		{

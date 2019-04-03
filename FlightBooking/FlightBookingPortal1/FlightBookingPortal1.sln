@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightBookingPortal1", "FlightBookingPortal1\FlightBookingPortal1.csproj", "{EEAE82EF-F7BE-4F02-83A3-0AB3F9259E59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{989DCF82-EF34-46BE-9FAE-BCF4F13E99BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapi", "webapi\webapi.csproj", "{8777435F-DE0A-4C3E-9DD3-41C6452A5D07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEAE82EF-F7BE-4F02-83A3-0AB3F9259E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAE82EF-F7BE-4F02-83A3-0AB3F9259E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEAE82EF-F7BE-4F02-83A3-0AB3F9259E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEAE82EF-F7BE-4F02-83A3-0AB3F9259E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{989DCF82-EF34-46BE-9FAE-BCF4F13E99BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989DCF82-EF34-46BE-9FAE-BCF4F13E99BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989DCF82-EF34-46BE-9FAE-BCF4F13E99BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989DCF82-EF34-46BE-9FAE-BCF4F13E99BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8777435F-DE0A-4C3E-9DD3-41C6452A5D07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8777435F-DE0A-4C3E-9DD3-41C6452A5D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8777435F-DE0A-4C3E-9DD3-41C6452A5D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8777435F-DE0A-4C3E-9DD3-41C6452A5D07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

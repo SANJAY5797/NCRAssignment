@@ -2,7 +2,7 @@
 #include <stdlib.h> 
 
 
-// A structure to represent a stack 
+// A structure to represent a character stack 
 struct StackNode
 {
 	char data;
@@ -47,4 +47,10 @@ int peek(struct StackNode* root)
 	if (isEmpty(root))
 		return -1;
 	return root->data;
+}
+
+void destroy_stack(struct StackNode* root)
+{
+	while (!isEmpty(root))
+		pop(&root);
 }

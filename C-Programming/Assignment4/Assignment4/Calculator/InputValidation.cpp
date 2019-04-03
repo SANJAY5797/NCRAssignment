@@ -13,7 +13,7 @@ bool brackets_matching(char *input)
 {
 	struct StackNode* root = NULL;
 	char ch;
-	for (int i = 0; i < strlen(input); i++)
+	for (int i = 0; i < strlen(input); i++)//Matching brackets
 	{
 		ch = input[i];
 		switch (ch)
@@ -39,11 +39,13 @@ bool brackets_matching(char *input)
 bool infix_check(char* input)
 {
 	int counter = 0;
-	for (counter = 0; counter < strlen(input); counter++)
+	for (counter = 0; counter < strlen(input); counter++)//Operand expected before and after operator
 	{
 		if ((input[counter] == '+') || (input[counter] == '-') || (input[counter] == '*') || (input[counter] == '/'))
 		{
-			if (!(input[counter - 1] >= '0' && input[counter - 1] <= '9' && input[counter + 1] >= '0' && input[counter + 1] <= '9'))
+			if (!((input[counter - 1] >= '0' && input[counter - 1] <= '9' && input[counter + 1] >= '0' && input[counter + 1] <= '9') ||
+				(input[counter - 1] == ')'  && input[counter + 1] >= '(') || (input[counter - 1] == '}'  && input[counter + 1] >= '{') ||
+				(input[counter - 1] == ']'  && input[counter + 1] >= '[')))
 			{
 				printf("Error : Expression not an infix expression\n");
 				getchar();
@@ -54,12 +56,13 @@ bool infix_check(char* input)
 	return true;
 }
 
-bool valid_characters(char *input)
+bool valid_characters(char *input)//Only numbers and operators expected
 {
 	int counter = 0;
 	for (counter = 0; counter < strlen(input); counter++)
 	{
-		if (!((input[counter] == '+') || (input[counter] == '-') || (input[counter] == '*') || (input[counter] == '/') || (input[counter] >= '0' && input[counter] <= '9')))
+		if (!((input[counter] == '+') || (input[counter] == '-') || (input[counter] == '*') || (input[counter] == '/') || (input[counter] >= '0' && input[counter] <= '9')
+			|| (input[0] == '(') || (input[0] == '{') || (input[0] == '[')))
 		{
 			printf("Error : Unexpected character entered\n");
 			getchar();
@@ -77,7 +80,7 @@ bool input_validation(char* input)
 		getchar();
 		return false;
 	}
-	if (!(input[0] >= '0' && input[0] <= '9'))
+	if (!((input[0] >= '0' && input[0] <= '9')||(input[0] == '(')||(input[0] == '{')||(input[0] == '[')))
 	{
 		printf("Starting letter expected to be a number\n");
 		getchar();

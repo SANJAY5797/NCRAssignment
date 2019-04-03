@@ -68,7 +68,7 @@
     <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="Infix_to_postfix.cpp" />
     <ClCompile Include="InputValidation.cpp" />
-    <ClCompile Include="my_int_stack.cpp" />
+    <ClCompile Include="my_long_double_stack.cpp" />
     <ClCompile Include="my_stack.cpp" />
     <ClCompile Include="Postfix_Evaluation.cpp" />
   </ItemGroup>

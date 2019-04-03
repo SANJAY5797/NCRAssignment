@@ -85,7 +85,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Example.cpp" />
-    <ClCompile Include="Problem9.cpp" />
+    <ClCompile Include="Program9.cpp" />
     <ClCompile Include="Program5.cpp" />
     <ClCompile Include="Program3.cpp" />
     <ClCompile Include="Program1.cpp" />

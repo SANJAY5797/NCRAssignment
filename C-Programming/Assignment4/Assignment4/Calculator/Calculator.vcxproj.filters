@@ -33,7 +33,7 @@
     <ClCompile Include="Postfix_Evaluation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="my_int_stack.cpp">
+    <ClCompile Include="my_long_double_stack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

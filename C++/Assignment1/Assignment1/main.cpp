@@ -15,23 +15,22 @@ using namespace std;
 #include "Program8.cpp"
 void swap_by_value(int, int);
 void swap_by_reference(int&, int&);
-
 Complex add_complex(Complex &c4, Complex &c5)
 {
 	Complex c6;
 	c6.real = c4.real + c5.real;
-	c6.imaginary = c4.real + c5.imaginary;
+	c6.imaginary = c4.imaginary + c5.imaginary;
 	cout << "\nReal part after addition = " << c6.real << "\nImaginary part after addition = " << c6.imaginary;
 	return c6;
 }
 
 Complex mul_complex(Complex &c4, Complex &c5)
 {
-	Complex c6;
-	c6.real = (c4.real)*(c5.real);
-	c6.imaginary = (c4.imaginary)*(c5.imaginary);
-	cout << "\nReal part after multiplication = " << c6.real << "\nImaginary part after multiplication = " << c6.imaginary;
-	return c6;
+		Complex c6;
+		c6.real = (c4.real)*(c5.real);
+		c6.imaginary = (c4.imaginary)*(c5.imaginary);
+		cout << "\nReal part after multiplication = " << c6.real << "\nImaginary part after multiplication = " << c6.imaginary;
+		return c6;
 }
 
 double find_distance(Point p1,Point p2)
@@ -106,8 +105,41 @@ int main()
 			Complex c1;
 			Complex c2(2);
 			Complex c3(4, 5);
-			c1 = add_complex(c2, c3);
-			c1 = mul_complex(c2, c3);
+			cout << "\nSelect an option\n1.Add two complex numbers\n2.Multiply two complex numbers\n";
+			int option = 0;
+			cin >> option;
+			if (option == 1)
+			{
+				int real1 = 0, real2 = 0, img1 = 0, img2 = 0;
+				cout << "\nEnter real part of 1st number";
+				cin >> real1;
+				cout << "\nEnter imaginary part of 1st number";
+				cin >> img1;
+				cout << "\nEnter real part of 2nd number";
+				cin >> real2;
+				cout << "\nEnter imaginary part of 2nd number";
+				cin >> img2;
+				Complex c4(real1, img1);
+				Complex c5(real2, img2);
+				c1 = add_complex(c4, c5);
+			}
+			else if (option == 2)
+			{
+				int real1 = 0, real2 = 0, img1 = 0, img2 = 0;
+				cout << "\nEnter real part of 1st number";
+				cin >> real1;
+				cout << "\nEnter imaginary part of 1st number";
+				cin >> img1;
+				cout << "\nEnter real part of 2nd number";
+				cin >> real2;
+				cout << "\nEnter imaginary part of 2nd number";
+				cin >> img2;
+				Complex c4(real1, img1);
+				Complex c5(real2, img2);
+				c1 = mul_complex(c4, c5);
+			}
+			else
+				cout << "Wrong option";
 			break;
 		}
 		case 4:

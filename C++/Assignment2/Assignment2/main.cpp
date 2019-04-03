@@ -11,8 +11,6 @@ using namespace std;
 #include "Program5.cpp"
 #include "Program6.cpp"
 
-
-
 int Polar::count;
 ostream& operator<<(ostream &cout, Student s)
 {
@@ -86,20 +84,8 @@ istream& operator>>(istream &cin, Complex &c)
 	return cin;
 }
 
-ostream& operator<<(ostream &cout, String str)
-{
-	cout << str.s << endl;
-	return cout;
-}
-istream& operator>>(istream &cin, String &str)
-{
-	char temp[50];
-	cout << "\nEnter the string : ";
-	cin >> temp;
-	str.s = (char *)malloc(sizeof(char)*(strlen(temp) + 1));
-	strcpy(str.s, temp);
-	return cin;
-}
+ostream& operator<<(ostream &cout, myString str);
+istream& operator>>(istream &cin, myString &str);
 
 int main()
 {
@@ -161,21 +147,23 @@ int main()
 		}
 		case 5:
 		{
-			String a1, a2, a3;
+			myString a1, a2, a3;
 			cin >> a1;
 			a2 = a1;
-			String a4(a1);
+			myString a4(a1);
 			a3 = a1 + a4;
 			cout <<"\na1 = "<< a1;
 			cout <<"\na2 = "<< a2;
 			cout <<"\na3 = " <<a3;
 			cout <<"\na2[2] = "<< a2[2] ;
+			break;
 		}
 		case 6:
 		{
 			String_2 s1("Pratik"), s2(s1);
 			cout << s1.s<<endl;
 			cout << s2.s;
+			break;
 		}
 		}
 	}

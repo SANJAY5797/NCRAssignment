@@ -15,13 +15,13 @@ int main()
 	input = inputString(stdin, INITIAL_SIZE);//Taking input from user
 	if (input == NULL)
 	{
-		printf("No heap space available for new string\n");//If no heap space available
+		printf("No heap space available for string\n");//If no heap space available
 	}
 	if (!input_validation(input))
 		return false;
-	char* postfix = infix_to_postfix(input);
-	//printf("Postfix expression = %s\n", postfix);
-	printf("Value of expression = %Lf", postfix_evaluation(postfix));
+	char* postfix = infix_to_postfix(input);//Conversion of infix to postfix
+	printf("Value of expression = %Lf", postfix_evaluation(postfix));//Calculate value of expression 
+
 	getchar();
 	return 0;
 }
