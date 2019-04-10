@@ -42,8 +42,9 @@ namespace webapi.Controllers
             //    dynamic result = JsonConvert.DeserializeObject(user);
             // userTable obj = new userTable();
             HttpResponseMessage response = null;
-            using (var obj = new FlightProjectEntities())
+            using (FlightProjectEntities obj = new FlightProjectEntities())
             {
+                
                var query = obj.userTables.Where(s => s.email == user.email && s.pass == user.password).FirstOrDefault<userTable>();
                 if (query!=null)
                 {
@@ -55,6 +56,7 @@ namespace webapi.Controllers
                     response = Request.CreateResponse(HttpStatusCode.BadRequest, "Error message");
                     return response;
                 }
+                
             }
               //  return null;
         }

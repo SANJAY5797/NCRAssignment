@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FlightProject" Class="flightScheduleDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=pratik;Initial Catalog=FlightProject;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FlightProjectConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.flightSchedule" Member="flightSchedules">
+    <Type Name="flightSchedule">
+      <Column Name="flightId" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="scheduleId" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fromCity" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="toCity" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="arrivalDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="departureDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="arrivalTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="departureTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="cost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="flightTable_flightSchedule" Member="flightTable" ThisKey="flightId" OtherKey="flightId" Type="flightTable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.flightTable" Member="flightTables">
+    <Type Name="flightTable">
+      <Column Name="flightId" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="flightName" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="capacity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="flightTable_flightSchedule" Member="flightSchedules" ThisKey="flightId" OtherKey="flightId" Type="flightSchedule" />
+    </Type>
+  </Table>
+</Database>

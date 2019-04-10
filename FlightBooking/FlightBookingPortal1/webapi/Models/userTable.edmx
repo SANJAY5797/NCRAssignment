@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FlightProjectModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bookingTable">
+          <Key>
+            <PropertyRef Name="bookingId" />
+          </Key>
+          <Property Name="bookingId" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="scheduleId" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="bookedDate" Type="date" Nullable="false" />
+          <Property Name="bookedTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="status" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cityTable">
+          <Key>
+            <PropertyRef Name="cityCode" />
+          </Key>
+          <Property Name="cityCode" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="cityName" Type="nchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="flightSchedule">
+          <Key>
+            <PropertyRef Name="scheduleId" />
+          </Key>
+          <Property Name="flightId" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="scheduleId" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="fromCity" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="toCity" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="arrivalDate" Type="date" Nullable="false" />
+          <Property Name="departureDate" Type="date" Nullable="false" />
+          <Property Name="arrivalTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="departureTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="cost" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="flightTable">
+          <Key>
+            <PropertyRef Name="flightId" />
+          </Key>
+          <Property Name="flightId" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="flightName" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="capacity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="passengerTable">
+          <Key>
+            <PropertyRef Name="passengerId" />
+          </Key>
+          <Property Name="passengerId" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="firstName" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="lastName" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="phone" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="email" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="ISD" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="gender" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="bookingId" Type="nchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="userTable">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="lastName" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="gender" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="dateOfBirth" Type="date" Nullable="false" />
+          <Property Name="ISD" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="phone" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="email" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="pass" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="type" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="title" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Booking_passenger">
+          <End Role="bookingTable" Type="Self.bookingTable" Multiplicity="1" />
+          <End Role="passengerTable" Type="Self.passengerTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bookingTable">
+              <PropertyRef Name="bookingId" />
+            </Principal>
+            <Dependent Role="passengerTable">
+              <PropertyRef Name="bookingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_booking_schedule">
+          <End Role="flightSchedule" Type="Self.flightSchedule" Multiplicity="1" />
+          <End Role="bookingTable" Type="Self.bookingTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="flightSchedule">
+              <PropertyRef Name="scheduleId" />
+            </Principal>
+            <Dependent Role="bookingTable">
+              <PropertyRef Name="scheduleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_flightId">
+          <End Role="flightTable" Type="Self.flightTable" Multiplicity="1" />
+          <End Role="flightSchedule" Type="Self.flightSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="flightTable">
+              <PropertyRef Name="flightId" />
+            </Principal>
+            <Dependent Role="flightSchedule">
+              <PropertyRef Name="flightId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FlightProjectModel1StoreContainer">
+          <EntitySet Name="bookingTable" EntityType="Self.bookingTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cityTable" EntityType="Self.cityTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="flightSchedule" EntityType="Self.flightSchedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="flightTable" EntityType="Self.flightTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="passengerTable" EntityType="Self.passengerTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="userTable" EntityType="Self.userTable" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Booking_passenger" Association="Self.FK_Booking_passenger">
+            <End Role="bookingTable" EntitySet="bookingTable" />
+            <End Role="passengerTable" EntitySet="passengerTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_schedule" Association="Self.FK_booking_schedule">
+            <End Role="flightSchedule" EntitySet="flightSchedule" />
+            <End Role="bookingTable" EntitySet="bookingTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_flightId" Association="Self.FK_flightId">
+            <End Role="flightTable" EntitySet="flightTable" />
+            <End Role="flightSchedule" EntitySet="flightSchedule" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FlightProjectModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bookingTable">
+          <Key>
+            <PropertyRef Name="bookingId" />
+          </Key>
+          <Property Name="bookingId" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="scheduleId" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="bookedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="bookedTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="passengerTables" Relationship="Self.FK_Booking_passenger" FromRole="bookingTable" ToRole="passengerTable" />
+          <NavigationProperty Name="flightSchedule" Relationship="Self.FK_booking_schedule" FromRole="bookingTable" ToRole="flightSchedule" />
+        </EntityType>
+        <EntityType Name="cityTable">
+          <Key>
+            <PropertyRef Name="cityCode" />
+          </Key>
+          <Property Name="cityCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="cityName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="flightSchedule">
+          <Key>
+            <PropertyRef Name="scheduleId" />
+          </Key>
+          <Property Name="flightId" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="scheduleId" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="fromCity" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="toCity" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="arrivalDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="departureDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="arrivalTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="departureTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="cost" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bookingTables" Relationship="Self.FK_booking_schedule" FromRole="flightSchedule" ToRole="bookingTable" />
+          <NavigationProperty Name="flightTable" Relationship="Self.FK_flightId" FromRole="flightSchedule" ToRole="flightTable" />
+        </EntityType>
+        <EntityType Name="flightTable">
+          <Key>
+            <PropertyRef Name="flightId" />
+          </Key>
+          <Property Name="flightId" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="flightName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="capacity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="flightSchedules" Relationship="Self.FK_flightId" FromRole="flightTable" ToRole="flightSchedule" />
+        </EntityType>
+        <EntityType Name="passengerTable">
+          <Key>
+            <PropertyRef Name="passengerId" />
+          </Key>
+          <Property Name="passengerId" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ISD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="bookingId" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="bookingTable" Relationship="Self.FK_Booking_passenger" FromRole="passengerTable" ToRole="bookingTable" />
+        </EntityType>
+        <EntityType Name="userTable">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="dateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ISD" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Booking_passenger">
+          <End Role="bookingTable" Type="Self.bookingTable" Multiplicity="1" />
+          <End Role="passengerTable" Type="Self.passengerTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bookingTable">
+              <PropertyRef Name="bookingId" />
+            </Principal>
+            <Dependent Role="passengerTable">
+              <PropertyRef Name="bookingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_booking_schedule">
+          <End Role="flightSchedule" Type="Self.flightSchedule" Multiplicity="1" />
+          <End Role="bookingTable" Type="Self.bookingTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="flightSchedule">
+              <PropertyRef Name="scheduleId" />
+            </Principal>
+            <Dependent Role="bookingTable">
+              <PropertyRef Name="scheduleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_flightId">
+          <End Role="flightTable" Type="Self.flightTable" Multiplicity="1" />
+          <End Role="flightSchedule" Type="Self.flightSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="flightTable">
+              <PropertyRef Name="flightId" />
+            </Principal>
+            <Dependent Role="flightSchedule">
+              <PropertyRef Name="flightId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FlightProjectEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bookingTables" EntityType="Self.bookingTable" />
+          <EntitySet Name="cityTables" EntityType="Self.cityTable" />
+          <EntitySet Name="flightSchedules" EntityType="Self.flightSchedule" />
+          <EntitySet Name="flightTables" EntityType="Self.flightTable" />
+          <EntitySet Name="passengerTables" EntityType="Self.passengerTable" />
+          <EntitySet Name="userTables" EntityType="Self.userTable" />
+          <AssociationSet Name="FK_Booking_passenger" Association="Self.FK_Booking_passenger">
+            <End Role="bookingTable" EntitySet="bookingTables" />
+            <End Role="passengerTable" EntitySet="passengerTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_schedule" Association="Self.FK_booking_schedule">
+            <End Role="flightSchedule" EntitySet="flightSchedules" />
+            <End Role="bookingTable" EntitySet="bookingTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_flightId" Association="Self.FK_flightId">
+            <End Role="flightTable" EntitySet="flightTables" />
+            <End Role="flightSchedule" EntitySet="flightSchedules" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FlightProjectModel1StoreContainer" CdmEntityContainer="FlightProjectEntities2">
+          <EntitySetMapping Name="bookingTables">
+            <EntityTypeMapping TypeName="FlightProjectModel1.bookingTable">
+              <MappingFragment StoreEntitySet="bookingTable">
+                <ScalarProperty Name="bookingId" ColumnName="bookingId" />
+                <ScalarProperty Name="scheduleId" ColumnName="scheduleId" />
+                <ScalarProperty Name="bookedDate" ColumnName="bookedDate" />
+                <ScalarProperty Name="bookedTime" ColumnName="bookedTime" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cityTables">
+            <EntityTypeMapping TypeName="FlightProjectModel1.cityTable">
+              <MappingFragment StoreEntitySet="cityTable">
+                <ScalarProperty Name="cityCode" ColumnName="cityCode" />
+                <ScalarProperty Name="cityName" ColumnName="cityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="flightSchedules">
+            <EntityTypeMapping TypeName="FlightProjectModel1.flightSchedule">
+              <MappingFragment StoreEntitySet="flightSchedule">
+                <ScalarProperty Name="flightId" ColumnName="flightId" />
+                <ScalarProperty Name="scheduleId" ColumnName="scheduleId" />
+                <ScalarProperty Name="fromCity" ColumnName="fromCity" />
+                <ScalarProperty Name="toCity" ColumnName="toCity" />
+                <ScalarProperty Name="arrivalDate" ColumnName="arrivalDate" />
+                <ScalarProperty Name="departureDate" ColumnName="departureDate" />
+                <ScalarProperty Name="arrivalTime" ColumnName="arrivalTime" />
+                <ScalarProperty Name="departureTime" ColumnName="departureTime" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="flightTables">
+            <EntityTypeMapping TypeName="FlightProjectModel1.flightTable">
+              <MappingFragment StoreEntitySet="flightTable">
+                <ScalarProperty Name="flightId" ColumnName="flightId" />
+                <ScalarProperty Name="flightName" ColumnName="flightName" />
+                <ScalarProperty Name="capacity" ColumnName="capacity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="passengerTables">
+            <EntityTypeMapping TypeName="FlightProjectModel1.passengerTable">
+              <MappingFragment StoreEntitySet="passengerTable">
+                <ScalarProperty Name="passengerId" ColumnName="passengerId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="ISD" ColumnName="ISD" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="bookingId" ColumnName="bookingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userTables">
+            <EntityTypeMapping TypeName="FlightProjectModel1.userTable">
+              <MappingFragment StoreEntitySet="userTable">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+                <ScalarProperty Name="ISD" ColumnName="ISD" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="title" ColumnName="title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

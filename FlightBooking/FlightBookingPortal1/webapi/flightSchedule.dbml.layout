@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="flightSchedule">
+  <DataContextMoniker Name="/flightScheduleDataContext" />
+  <nestedChildShapes>
+    <classShape Id="725df818-af8e-4124-b062-2710e01c53e1" absoluteBounds="5.625, 1.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/flightScheduleDataContext/flightSchedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d356c9af-1877-43a2-8669-a95b02411ea4" absoluteBounds="5.64, 1.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3c297445-8d2b-455b-aac0-0e5a1228deba" absoluteBounds="2.375, 1.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/flightScheduleDataContext/flightTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0801d647-e4f9-4255-9940-cd4f781a03cd" absoluteBounds="2.3899999999999997, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.375 : 2.13064697265625); (5.625 : 2.13064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/flightScheduleDataContext/flightTable/flightTable_flightSchedule" />
+      <nodes>
+        <classShapeMoniker Id="3c297445-8d2b-455b-aac0-0e5a1228deba" />
+        <classShapeMoniker Id="725df818-af8e-4124-b062-2710e01c53e1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

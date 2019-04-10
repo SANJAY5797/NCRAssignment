@@ -38,13 +38,17 @@ namespace FlightBookingPortal1.Controllers
             var response = client.PostAsync(uri, content);
             if (response.Result.IsSuccessStatusCode)
             {
-               return Redirect("http://localhost:59316/Home/About");
+                //Session["user"] = user.email;
+                Session.Add("user", user.email);
+               return Redirect("http://localhost:59316/HomePage/Index");
             }
             else
             {
-               return Redirect("http://localhost:59316/Login/Index");
+               
+                return Redirect("http://localhost:59316/Login/Index");
             }
           
        }
+        
     }
 }

@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top"> 
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                
+                
+                @if (Session["user"] != null)
+                {
+                    //if session is enabled then display the session value
+
+                    @Html.Label(Session["user"].ToString())
+                    <li>@Html.ActionLink("Book Ticket", "BookTicket", "User")</li>
+                    <li>@Html.ActionLink("Edit Details", "EditDetails", "User")</li>
+                    <li>@Html.ActionLink("Previous Bookings", "PreviousBookings", "User")</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "User")</li>
+                }
+             else
+                {
+                <li>@Html.ActionLink("Register", "Register", "NewUser")</li>
+                <li>@Html.ActionLink("Sign In", "Index", "Login")</li>
+                }
+                
+
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
